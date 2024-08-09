@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Garena liên quân mobile</title>
+    {% else %}
+    <title>Chào mừng đến với bình nguyên vô tận</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Garena: <a href="/index">Bảng tin</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+

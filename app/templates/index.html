@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Liên quân mobile</title>
+        {% else %}
+        <title>Chào mừng đến với bình nguyên vô tận!</title>
+        {% endif %}
+    </head>
+    <body>
+    {% extends "base.html" %}
+    {% block content %}
+        <h1>Xin chào, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    {% endblock %}
+    </body>
+</html>
+
+
