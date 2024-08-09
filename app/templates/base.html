@@ -8,13 +8,21 @@
     {% endif %}
   </head>
   <body>
-    <div>Garena: <a href="/index">Bảng tin</a></div>
-    <hr>
     <div>
       Liên Quân:
-      <a href="/index">Trang Chủ</a>
-      <a href="/login">Đăng Nhập</a>
+      <a href="{{ url_for ('index') }}">Trang Chủ</a>
+      <a href="{{ url_for ('login') }}">Đăng Nhập</a>
     </div>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>
