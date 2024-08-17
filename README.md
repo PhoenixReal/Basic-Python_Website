@@ -1,2 +1,2 @@
-# Basic-Python_Website
+# Goals
 Learning how to use framework called Flask
