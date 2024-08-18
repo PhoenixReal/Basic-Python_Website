@@ -10,8 +10,12 @@
   <body>
     <div>
       Liên Quân:
-      <a href="{{ url_for ('index') }}">Trang Chủ</a>
-      <a href="{{ url_for ('login') }}">Đăng Nhập</a>
+      <a href="{{ url_for('index') }}">Trang Chủ</a>
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Đăng Nhập</a>
+      {% else %}
+      <a href="{{ url_for('logout') }}">Đăng Xuất</a>
+      {% endif %}
     </div>
     <hr>
     {% with messages = get_flashed_messages() %}
